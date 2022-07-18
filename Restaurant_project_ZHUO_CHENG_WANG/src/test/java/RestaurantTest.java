@@ -64,4 +64,17 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    //<<<<<<<<<<<<<<<<<<<<<<<Calculate the Total cost>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    //Add a failing case based on the TDD procedure
+    //Following test case should fail before implementing the getOrderValue method
+    @Test
+    public void add_up_price_of_the_selected_item_in_the_menu_will_give_the_total_price() {
+        List<String> itemsToOrder = new ArrayList<>();
+        itemsToOrder.add("Sweet corn soup");
+        itemsToOrder.add("Vegetable lasagne");
+        int total = restaurant.getOrderValue(itemsToOrder);
+        assertEquals(119 + 269, total);
+    }
+
 }
